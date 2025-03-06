@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:websonix/album.dart';
 import 'package:websonix/homepage.dart';
 import 'package:websonix/discard/music_app.dart';
 
@@ -12,6 +13,25 @@ class TabsScreen extends StatefulWidget {
 }
 
 class _TabsScreenState extends State<TabsScreen> {
+
+  
+  int _selectedIndex = 0;
+
+  final List<Widget> Screens = [
+    const Homepage(),
+    const Homepage(),
+    const Homepage(),
+    const MusicPlayerScreen(),
+
+  ];
+
+
+  void _onItemTapped(int index) {
+    setState(() {
+      _selectedIndex = index;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -47,8 +67,33 @@ class _TabsScreenState extends State<TabsScreen> {
       ),
       drawer: Drawer(),
       // body: MusicApp(),
-      body: Homepage(),
-      bottomNavigationBar: BottomNavBar(),
+      body: Screens[_selectedIndex],
+      bottomNavigationBar: BottomNavigationBar(
+        currentIndex: _selectedIndex,
+        onTap: _onItemTapped,
+      items: const [
+        BottomNavigationBarItem(
+          icon: Icon(Icons.home),
+          backgroundColor: Color(0xFF362551),
+          label: 'Home',
+        ),
+        BottomNavigationBarItem(
+          icon: Icon(Icons.search),
+          backgroundColor: Color(0xFF362551),
+          label: 'Search',
+        ),
+        BottomNavigationBarItem(
+          icon: Icon(Icons.library_add),
+          backgroundColor: Color(0xFF362551),
+          label: 'Library',
+        ),
+        BottomNavigationBarItem(
+          icon: Icon(Icons.thunderstorm),
+          backgroundColor: Color(0xFF362551),
+          label: 'Premium',
+        ),
+      ],
+    )
     );
   }
 }
