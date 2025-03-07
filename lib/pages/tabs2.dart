@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:websonix/album.dart';
-import 'package:websonix/homepage.dart';
-import 'package:websonix/discard/music_app.dart';
+import 'package:websonix/pages/album.dart';
+import 'package:websonix/pages/homepage.dart';
 
-import 'components/bottom_nav_bar.dart';
 
 class TabsScreen extends StatefulWidget {
   const TabsScreen({super.key});

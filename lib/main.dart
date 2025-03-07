@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:websonix/discard/music_app.dart';
-import 'package:websonix/discard/tabs.dart';
-
-import 'tabs2.dart';
+import 'pages/tabs2.dart';
 
 void main() {
   runApp(const MyApp());
