@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:websonix/pages/album.dart';
 import 'package:websonix/pages/homepage.dart';
+import 'package:websonix/pages/superlistener_screen.dart';
+
+import 'explore_screen.dart';
 
 
 class TabsScreen extends StatefulWidget {
@@ -17,9 +20,9 @@ class _TabsScreenState extends State<TabsScreen> {
 
   final List<Widget> Screens = [
     const Homepage(),
-    const Homepage(),
-    const Homepage(),
+     ExplorePage(),
     const MusicPlayerScreen(),
+    const SuperlistenerScreen(),
 
   ];
 
@@ -36,7 +39,7 @@ class _TabsScreenState extends State<TabsScreen> {
       appBar: AppBar(
         leadingWidth: 150,
         toolbarHeight: 70,
-        backgroundColor: Color(0xFF362551),
+        backgroundColor: Color(0xFF140A20),
         
         leading: Padding(
           padding: const EdgeInsets.only(top: 8, bottom: 8, left: 8),
@@ -67,28 +70,29 @@ class _TabsScreenState extends State<TabsScreen> {
       // body: MusicApp(),
       body: Screens[_selectedIndex],
       bottomNavigationBar: BottomNavigationBar(
+        backgroundColor: Color(0xff140A20),
         currentIndex: _selectedIndex,
         onTap: _onItemTapped,
       items: const [
         BottomNavigationBarItem(
           icon: Icon(Icons.home),
-          backgroundColor: Color(0xFF362551),
+          backgroundColor: Color(0xFF140A20),
           label: 'Home',
         ),
         BottomNavigationBarItem(
           icon: Icon(Icons.search),
-          backgroundColor: Color(0xFF362551),
+          backgroundColor: Color(0xFF140A20),
           label: 'Search',
         ),
         BottomNavigationBarItem(
-          icon: Icon(Icons.library_add),
-          backgroundColor: Color(0xFF362551),
-          label: 'Library',
+          icon: Icon(Icons.star_purple500),
+          backgroundColor: Color(0xFF140A20),
+          label: 'Vibe',
         ),
         BottomNavigationBarItem(
-          icon: Icon(Icons.thunderstorm),
-          backgroundColor: Color(0xFF362551),
-          label: 'Premium',
+          icon: Icon(Icons.library_add),
+          backgroundColor: Color(0xFF140A20),
+          label: 'Library',
         ),
       ],
     )
